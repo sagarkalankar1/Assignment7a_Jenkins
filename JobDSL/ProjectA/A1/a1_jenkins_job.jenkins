@@ -1,4 +1,4 @@
-pipelineJob('ProjectA/A1') {
+pipelineJob('ProjectA/A1/PipelineJob-A1') {
   definition {
     cps {
       script('''

@@ -1,5 +1,5 @@
-folder('MyFolder') {
-  displayName('My Folder')
+folder('MyFolder1') {
+  displayName('My Folder1')
   
   job('MyChildJob') {
     displayName('Child Job')

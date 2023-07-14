@@ -12,7 +12,8 @@ pipelineJob("JobDSL/ProjectA/A1/a1_jenkins_job.jenkins") {
                     }
                 }
               }
-            )
+            '''.stripIndent())
+            sandbox()
         }
     }
 }

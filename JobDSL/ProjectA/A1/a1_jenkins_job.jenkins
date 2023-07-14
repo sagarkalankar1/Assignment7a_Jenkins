@@ -1,19 +1,27 @@
-pipelineJob("JobDSL/ProjectA/A1/a1_jenkins_job.jenkins") {
-    definition {
-        cps {
-            script('''
-              pipeline {
-                agent any 
-                stages {
-                    stage('Ajob') {
-                        steps {
-                            echo "Hiii world"
-                        }
-                    }
-                }
+pipelineJob('ProjectA/A1') {
+  definition {
+    cps {
+      script('''
+        pipeline {
+          agent any
+
+          stages {
+            stage('Build') {
+              steps {
+                echo 'Building the project'
+                // Additional build steps...
               }
-            '''.stripIndent())
-            sandbox()
+            }
+
+            stage('Test') {
+              steps {
+                echo 'Running tests'
+                // Additional test steps...
+              }
+            }
+          }
         }
+      ''')
     }
+  }
 }

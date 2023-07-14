@@ -1,27 +1,18 @@
-
-pipeline {
-  agent any
-  
-  stages {
-    stage('Build') {
-      steps {
-        echo 'Building the child job'
-        // Additional build steps...
-      }
+pipelineJob("JobDSL/ProjectA/A1/a1_jenkins_job.jenkins") {
+    definition {
+        cps {
+            script('''
+              pipeline {
+                agent any 
+                stages {
+                    stage('Ajob') {
+                        steps {
+                            echo "Hiii world"
+                        }
+                    }
+                }
+              }
+            )
+        }
     }
-    
-    stage('Test') {
-      steps {
-        echo 'Running tests for the child job'
-        // Additional test steps...
-      }
-    }
-    
-    stage('Deploy') {
-      steps {
-        echo 'Deploying the child job'
-        // Additional deployment steps...
-      }
-    }
-  }
 }

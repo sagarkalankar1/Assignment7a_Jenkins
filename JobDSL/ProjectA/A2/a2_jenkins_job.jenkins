@@ -1,27 +1,27 @@
+pipelineJob('ProjectA/A2') {
+  definition {
+    cps {
+      script('''
+        pipeline {
+          agent any
 
-pipeline {
-  agent any
-  
-  stages {
-    stage('Build') {
-      steps {
-        echo 'Building the child job'
-        // Additional build steps...
-      }
-    }
-    
-    stage('Test') {
-      steps {
-        echo 'Running tests for the child job'
-        // Additional test steps...
-      }
-    }
-    
-    stage('Deploy') {
-      steps {
-        echo 'Deploying the child job'
-        // Additional deployment steps...
-      }
+          stages {
+            stage('Build') {
+              steps {
+                echo 'Building the project'
+                // Additional build steps...
+              }
+            }
+
+            stage('Test') {
+              steps {
+                echo 'Running tests'
+                // Additional test steps...
+              }
+            }
+          }
+        }
+      ''')
     }
   }
 }

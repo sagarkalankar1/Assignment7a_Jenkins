@@ -1,1 +1,27 @@
+pipelineJob('ProjectC/C2/PipelineJob-C') {
+  definition {
+    cps {
+      script('''
+        pipeline {
+          agent any
 
+          stages {
+            stage('Build') {
+              steps {
+                echo 'Building the project'
+                // Additional build steps...
+              }
+            }
+
+            stage('Test') {
+              steps {
+                echo 'Running tests'
+                // Additional test steps...
+              }
+            }
+          }
+        }
+      ''')
+    }
+  }
+}
